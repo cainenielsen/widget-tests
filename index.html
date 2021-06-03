@@ -25,9 +25,9 @@
 </head>
 
 <body>
-  <button id="start-chat">Chat</button>
+  <button id="start-chat" style="display:none;">Chat</button>
 
-  <button id="custom-gladly-chat-button" onclick="Gladly.show()">
+  <button style="display:none;" id="custom-gladly-chat-button" onclick="Gladly.show()">
     <div id="with-no-active-chat">
       <span>START NEW CHAT</span>
     </div>
@@ -88,7 +88,7 @@
     helpjuiceSwiftyUrlMap = {
     }
 
-    onHelpjuiceInit = function () { alert("init") }
+    // onHelpjuiceInit = function () { alert("init") }
 
     onHelpjuiceContactUs = function () {
       $('#helpjuice-widget').fadeOut();
