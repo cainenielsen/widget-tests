@@ -67,15 +67,6 @@
     }).then(function () {
       // This is called once Sidekick has been initialized.
 
-
-      // Caine put this here, custom
-      function calcResult(e) {
-        e.preventDefault();
-        console.log("Prevented");
-      }
-      document.getElementById('new_question').addEventListener('submit', calcResult, false);
-      // End Custom
-
       // An element with the id "start-chat" is assumed to be on the page.
       var startChatButton = document.getElementById('start-chat');
 
@@ -96,6 +87,15 @@
       Gladly.on('sidekick:closed', function () {
         $("#helpjuice-widget > #helpjuice-widget-expanded").toggleClass("hj-shown"),
           $('#helpjuice-widget').fadeIn();
+      });
+      Gladly.on('sidekick:opened', function () {
+        // Caine put this here, custom
+        function calcResult(e) {
+          e.preventDefault();
+          console.log("Prevented");
+        }
+        document.getElementById('new_question').addEventListener('submit', calcResult, false);
+        // End Custom
       });
     }).catch(function (error) {
       // If anything goes wrong when Sidekick is being initialized, this gets called.
